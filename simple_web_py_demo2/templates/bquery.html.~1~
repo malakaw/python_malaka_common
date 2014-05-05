@@ -1,0 +1,10 @@
+$def with (resu)
+
+$if resu:
+    I just wanted to say <em>hello</em> to $resu.
+    $for objre in resu:
+        <li>
+         $objre['id']
+        </li>
+$else:
+    <em>Hello</em>, world!

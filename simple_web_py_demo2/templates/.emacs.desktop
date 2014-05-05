@@ -1,0 +1,18 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Tue Mar 18 18:51:32 2014
+;; Desktop file format version 206
+;; Emacs version 24.3.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("formtest" "image" "favicon" "Link" "Project" "grab" "isInit" "obj" "imi" "showt1" "test1" "sleep" "loop" "clea" "loop" "Leap.loop"))
+(setq regexp-search-ring '("tabbar"))
+(setq register-alist '((48 . "\n                    <li><a href=\"#\">&laquo;</a></li>\n                    <li><a href=\"#\">1</a></li>\n                    <li><a href=\"#\">2</a></li>\n                    <li><a href=\"#\">3</a></li>\n                    <li><a href=\"#\">4</a></li>\n                    <li><a href=\"#\">5</a></li>\n                    <li><a href=\"#\">&raquo;</a></li>\n   ")))
+(setq file-name-history '("/ssh:root@192.168.44.68:/apps/server/web.py_solr/templates/" "/ssh:root@192.168.44.68:/apps/server/web.py_solr/web1.py" "/ssh:root@192.168.44.68:/apps/server/web.py_solr/templates/ft.html" "/ssh:root@192.168.44.68:/apps/server/web.py_solr/templates/bquery.html" "~/Pictures/" "/ssh:root@192.168.44.68:/apps/server/web.py_solr/templates/bquery.html" "/ssh:root@192.168.44.68:/apps/server/web.py_solr/static/bbb.html" "/ssh:root@192.168.44.68:/apps/server/web.py_solr/static/bs2.html" "/ssh:root@192.168.44.68:/apps/server/web.py_solr/templates/query.html" "/ssh:root@192.168.44.68:/apps/server/web.py_solr/action/__init__.py" "/ssh:root@192.168.44.68:/apps/server/web.py_solr/action/solr_client.py" "/Users/malaka/work/python/xml/httpclient.py" "/Users/malaka/work_note/web.py.org/1.html" "/ssh:root@192.168.44.68:/apps/server/web.py_solr/templates/h1.html" "/ssh:root@192.168.44.68:/apps/server/web.py_solr/web1.py" "/Users/malaka/work_note/web.py.org/1.html" "/Users/malaka/work_note/web.py.org/1.org" "/ssh:root@192.168.44.68:/apps/server/Sweb/e.txt" "/ssh:root@192.168.44.68:/apps/server/Sweb/slorclient1.py" "/Users/malaka/work/html/leapmotion/my/t2.html" "~/.emacs.d/init.el" "/Users/malaka/work/clojure/vip/bpsort_webclient/bpclient/src/bpclient/handler.clj" "/Users/malaka/work/html/leapmotion/my/sleep.html" "/Users/malaka/work/html/leapmotion/my/t2.html" "~/.emacs.d/init.el" "/Users/malaka/work/clojure/vip/product_process/src/product_process/pfile.clj" "/Users/malaka/work/html/leapmotion/my/t1.html" "/Users/malaka/work/html/leapmotion/my/js/my.js" "/Users/malaka/work/html/leapmotion/my/lm1.html" "/Users/malaka/work/html/leapmotion/my/b_picture.html"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:

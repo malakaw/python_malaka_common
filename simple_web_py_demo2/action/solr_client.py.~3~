@@ -1,0 +1,85 @@
+#coding=utf-8
+import solr
+#http://10.19.21.64:9030/s171.25/8983/solr/product_brand/select?q=*:*
+#http://10.19.21.64:9030/s171.25/8983/solr/product_brand/select?q=sl_type:b&fl=sl_content&wt=json&fq=sl_hasstock:true AND sl_pbrand_level:B AND sl_sell_to:[NOW TO *]
+#
+#http://192.168.44.68:8983/8983/solr//product_brand/select?q=sl_type:b&fl=sl_content&wt=json&fq=sl_hasstock:true AND  sl_sell_to:[NOW TO *]
+#http://192.168.44.68:8983/solr/product_brand/select?q=sl_type%3Ab&wt=json&indent=true
+#
+#
+
+solrserver68 = solr.SolrConnection('http://10.19.21.64:9030/s171.25/8983/solr/product_brand')
+#solrserver68 = solr.SolrConnection('http://192.168.44.68:8983/solr/product_brand')
+def querysolr():
+    s = solr.SolrConnection('http://192.168.44.68:8983/solr')
+    result = s.query("*:*", rows=5)
+    for r in result:
+        print r['id']
+    return result
+
+
+
+def qBrand(wh,cat,price_r,agio_range):
+    #print wh['cwh']
+   # print ",".join(wh['cwh'])
+    #print (len(wh['cwh']))
+#    solrserver68.fq("sl_to_warehouse:VIP_SH")
+#http://10.19.21.64:9030/s171.25/8983/solr/product_brand/select?q=*:*http://10.19.21.64:9030/s171.25/8983/solr/product_brand/select?q=*:*
+#http://192.168.44.68:8983/solr/product_brand/select?q=sl_catid:109 AND sl_catid:999&wt=json&indent=true
+    q_str = ''
+    if len(wh['cwh']):
+        q_str  =  "sl_to_warehouse:%s" % (",".join(wh['cwh']))
+    if len(cat['ccat']):
+        q_str  +=  " AND sl_catid:%s" % (" ".join(cat['ccat']))
+
+    if len(q_str):
+        q_str += " AND sl_range_pct:[%s TO %s]" % (getPrice(price_r[0],False),getPrice(price_r[1],True))
+    else:
+        q_str += "sl_range_pct:[%s TO %s]" % (getPrice(price_r[0],False),getPrice(price_r[1],True))
+
+
+    if len(q_str):
+        q_str  += " AND  (sl_range_agio_min:[%s TO %s] AND sl_range_agio_max:[%s TO %s]) " % (agio_range[0],agio_range[1],agio_range[0],agio_range[1] )
+    else:
+        q_str  +=  "  (sl_range_agio_min:[%s TO %s] AND sl_range_agio_max:[%s TO %s]) " % (agio_range[0],agio_range[1],agio_range[0],agio_range[1] )
+
+
+
+    result =  solrserver68.query("sl_type:b",fq=q_str,rows=16 ,sort="sl_sequcence asc")
+
+    print result.numFound
+    return result
+
+def qBrand1(offset=0,limit=10):
+    result =  solrserver68.query("sl_type:b",start=offset,rows=limit)
+    print result.numFound
+    for r in result:
+        print r['id']
+
+    return result
+
+
+import sys
+def getPrice(p ,ismax):
+    if ismax:
+        if len(p):
+            return p
+        else:
+            return sys.maxint
+    else:
+        if len(p):
+            return p
+        else:
+            return "0"
+
+def getAgio(a ,ismax):
+    if ismax:
+        if len(a):
+            return a
+        else:
+            return 10
+    else:
+        if len(a):
+            return a
+        else:
+            return "0"

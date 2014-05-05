@@ -1,0 +1,416 @@
+$def with (resu,checkList_wh,checkList_catid,checkList_level,price_range,agio_range,mypdiv)
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <script src="/static/js/mybp.js"></script>
+
+    <title>brand query</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/navbar.css" rel="stylesheet">
+    <link href="/static/css/layoutit.css" rel="stylesheet">
+<script>
+function fsubmit(topage)
+{
+   document.f_bp.page.value=topage;
+   document.f_bp.submit();
+}
+</script>
+
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Static navbar -->
+      <div class="navbar nav
+bar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Product brand query</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/bquery">Brand</a></li>
+            <li><a href="/pquery">Product</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+
+<td>
+  <sss></sss>
+</td>
+
+
+      <div class="container-fluid">
+        <form id="f_bq" name="f_bp" method="GET" action="/bquery">
+          <input name="page" type="hidden" value="1">
+          <div class="row">
+            <div class="span4">
+                 <h4><small>品牌等级</small>
+                    $if "100" in checkList_level:
+                        <label class="checkbox-inline">
+                           <input name="plev" type="checkbox" id="inlineCheckbox1" value="100" checked="true">AD
+                        </label>
+                    $else:
+                        <label class="checkbox-inline">
+                           <input name="plev" type="checkbox" id="inlineCheckbox1" value="100">AD
+                        </label>
+                    $if "200" in checkList_level:
+                        <label class="checkbox-inline">
+                           <input name="plev" type="checkbox" id="inlineCheckbox1" value="200" checked="true">AA
+                        </label>
+                    $else:
+                        <label class="checkbox-inline">
+                           <input name="plev" type="checkbox" id="inlineCheckbox1" value="200">AA
+                        </label>
+
+                    $if "300" in checkList_level:
+                        <label class="checkbox-inline">
+                            <input name="plev" type="checkbox" id="inlineCheckbox1" value="300" checked="true">A+
+                        </label>
+                    $else:
+                        <label class="checkbox-inline">
+                            <input name="plev" type="checkbox" id="inlineCheckbox1" value="300">A+
+                        </label>
+
+                    $if "400" in checkList_level:
+                        <label class="checkbox-inline">
+                            <input name="plev" type="checkbox" id="inlineCheckbox1" value="400" checked="true">A
+                        </label>
+                    $else:
+                        <label class="checkbox-inline">
+                            <input name="plev" type="checkbox" id="inlineCheckbox1" value="400">A
+                        </label>
+
+                    $if "500" in checkList_level:
+                         <label class="checkbox-inline">
+                           <input name="plev" type="checkbox" id="inlineCheckbox1" value="500" checked="true">A-
+                         </label>
+                    $else:
+                         <label class="checkbox-inline">
+                           <input name="plev" type="checkbox" id="inlineCheckbox1" value="500">A-
+                         </label>
+
+                    $if "600" in checkList_level:
+                         <label class="checkbox-inline">
+                           <input name="plev" type="checkbox" id="inlineCheckbox1" value="600" checked="true">B+
+                         </label>
+                     $else:
+                         <label class="checkbox-inline">
+                           <input name="plev" type="checkbox" id="inlineCheckbox1" value="600">B+
+                         </label>
+
+                     $if "700" in checkList_level:
+                         <label class="checkbox-inline">
+                           <input name="plev" type="checkbox" id="inlineCheckbox1" value="700" checked="true">B
+                         </label>
+                     $else:
+                         <label class="checkbox-inline">
+                           <input name="plev" type="checkbox" id="inlineCheckbox1" value="700">B
+                         </label>
+
+
+                     $if "910" in checkList_level:
+                         <label class="checkbox-inline">
+                           <input name="plev" type="checkbox" id="inlineCheckbox1" value="910" checked="true">C
+                         </label>
+                     $else:
+                         <label class="checkbox-inline">
+                           <input name="plev" type="checkbox" id="inlineCheckbox1" value="910">C
+                         </label>
+
+                     </h4>
+		</div>
+          </div>
+          <div class="row">
+            <div class="span4">
+                     <h4><small>仓库</small>
+                        $if "VIP_BJ" in checkList_wh:
+                           <label class="checkbox-inline">
+                              <input name="cwh" type="checkbox" id="inlineCheckbox1" value="VIP_BJ" checked="true"> 北京
+                           </label>
+                        $else:
+                           <label class="checkbox-inline">
+                              <input name="cwh" type="checkbox" id="inlineCheckbox1" value="VIP_BJ"> 北京
+                           </label>
+
+
+                        $if  "VIP_SH" in checkList_wh:
+                           <label class="checkbox-inline">
+                              <input name="cwh" type="checkbox" id="inlineCheckbox1" value="VIP_SH" checked="true"> 上海
+                           </label>
+                        $else:
+                           <label class="checkbox-inline">
+                              <input name="cwh" type="checkbox" id="inlineCheckbox1" value="VIP_SH">上海
+                           </label>
+
+                        $if  "VIP_CD" in checkList_wh:
+                           <label class="checkbox-inline">
+                              <input name="cwh" type="checkbox" id="inlineCheckbox1" value="VIP_CD" checked="true"> 成都
+                           </label>
+                        $else:
+                           <label class="checkbox-inline">
+                              <input name="cwh" type="checkbox" id="inlineCheckbox1" value="VIP_CD">成都
+                           </label>
+
+                        $if  "VIP_HH" in checkList_wh:
+                           <label class="checkbox-inline">
+                              <input name="cwh" type="checkbox" id="inlineCheckbox1" value="VIP_HH" checked="true"> 花海
+                           </label>
+                        $else:
+                           <label class="checkbox-inline">
+                              <input name="cwh" type="checkbox" id="inlineCheckbox1" value="VIP_HH">花海
+                           </label>
+
+                        $if  "VIP_NH" in checkList_wh:
+                           <label class="checkbox-inline">
+                              <input name="cwh" type="checkbox" id="inlineCheckbox1" value="VIP_NH" checked="true"> 南海
+                           </label>
+                        $else:
+                           <label class="checkbox-inline">
+                              <input name="cwh" type="checkbox" id="inlineCheckbox1" value="VIP_NH">南海
+                           </label>
+                  </h4>
+	    </div>
+          </div>
+          <div class="row">
+            <div class="span4">
+                 <h4><small>1级分类</small>
+                     $if "102" in checkList_catid:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="102" checked="true">男装
+                          </label>
+                     $else:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="102"> 男装
+                          </label>
+
+                     $if "106" in checkList_catid:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="106" checked="true"> 箱包
+                          </label>
+                     $else:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="106"> 箱包
+                          </label>
+
+
+                     $if "109" in checkList_catid:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="109" checked="true">家具百货
+                          </label>
+                     $else:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="109"> 家具百货
+                          </label>
+                     $if "110" in checkList_catid:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="110" checked="true"> 文体用品
+                          </label>
+                     $else:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="110"> 文体用品
+                          </label>
+
+                     $if "101" in checkList_catid:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="101" checked="true">女装
+                          </label>
+                     $else:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="101"> 女装
+                          </label>
+                     $if "105" in checkList_catid:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="105" checked="true">化妆品
+                          </label>
+                     $else:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="105"> 化妆品
+                          </label>
+
+
+
+
+                     $if "104" in checkList_catid:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="104" checked="true">鞋类
+                          </label>
+                     $else:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="104"> 鞋类
+                          </label>
+                     $if "111" in checkList_catid:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="111" checked="true">汽车配件
+                          </label>
+                     $else:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="111"> 汽车配件
+                          </label>
+
+                     $if "103" in checkList_catid:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="103" checked="true">童装
+                          </label>
+                     $else:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="103"> 童装
+                          </label>
+                     $if "107" in checkList_catid:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="107" checked="true">配饰
+                          </label>
+                     $else:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="107"> 配饰
+                          </label>
+
+
+                     $if "108" in checkList_catid:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="108" checked="true">3c产品
+                          </label>
+                     $else:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="108"> 3c产品
+                          </label>
+                     $if "999" in checkList_catid:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="999" checked="true">其他
+                          </label>
+                     $else:
+                          <label class="checkbox-inline">
+                            <input name="ccat" type="checkbox" id="inlineCheckbox1" value="999"> 其他
+                          </label>
+
+                  </h4>
+	    </div>
+          </div>
+          <div class="row">
+            <div class="span10">
+                  <h4><small>客单价区间</small>
+                   <input name="p_min" type="text" class="input-mini" placeholder="最小价格" value="$price_range[0]">
+                   <input name="p_max" type="text" class="input-mini" placeholder="最大价格" value="$price_range[1]">
+                  </h4>
+		</div>
+          </div>
+          <div class="row">
+            <div class="span10">
+                  <h4><small>折扣区间</small>
+                   <input name="agio_min" type="text" class="input-mini" placeholder="最小折扣" value="$agio_range[0]">
+                   <input name="agio_max" type="text" class="input-mini" placeholder="最大折扣" value="$agio_range[1]">
+                  </h4>
+		</div>
+          </div>
+
+          <div class="row">
+            <button  class="btn btn-default" id="submit0" name="submit0">Search</button>
+          </div>
+          </form>
+	</div>
+       总数： $resu.numFound
+	<div class="row-fluid">
+		<div class="span12">
+                  <br/>
+                  <table class="table table-hover">
+                     <tr>
+                       <th>name</th>
+                       <th>id</th>
+                       <th>可售仓库</th>
+                       <th>类别</th>
+                       <th>品牌</th>
+                       <th>折扣</th>
+                       <th>售卖期</th>
+                       <th>库存 </th>
+                       <th>品牌等级</th>
+                       <th>平均客单价</th>
+                       <Th>content</th>
+                     </tr>
+                     $if resu:
+                         $for objre in resu:
+                            <tr>
+                              <td>
+                                <script>
+                                  document.write(getName('$:objre["sl_content"]'));
+                                </script>
+                              </td>
+                              <td>
+                                $objre['id']
+                              </td>
+                              <td>$objre['sl_to_warehouse']</td>
+                              <td>
+                                <script>
+                                  document.write(getcatname('$objre["sl_catid"]'));
+                                </script>
+                              </td>
+                              <td>
+                                <script>
+                                  document.write(getBrand('$:objre["sl_content"]'));
+                                </script>
+                              </td>
+                              <td><em> $objre['sl_range_agio_min']</em> -<em>$objre['sl_range_agio_max']</em></td>
+                              <td>
+                                <script>
+                                  document.write(getSellDate('$:objre["sl_content"]'));
+                                </script>
+                              </td>
+                              <td>
+                                <script>
+                                  document.write(getStock('$:objre["sl_content"]'));
+                                </script>
+                              </td>
+                              <td>
+                                <script>
+                                  document.write(getlevelName('$objre["sl_pbrand_level"]'))
+                                </script>
+                              </td>
+                              <td>
+                                $objre['sl_range_pct']
+                              </td>
+                              <td>
+                                <script>
+                                  document.write(getURL('$:objre["sl_content"]'));
+                                </script>
+                              </td>
+                            </tr>
+                     $else:
+                         <tr><td></td><td></td><td></td></tr>
+                  </table>
+
+	          <ul class="pagination">
+                    $:mypdiv
+                  </ul>
+	        </div>
+	</div>
+
+
+
+</div>
+
+
+
+
+    </div> <!-- /container -->
+
+
+
+    <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+  </body>
+
+
+
+</html>

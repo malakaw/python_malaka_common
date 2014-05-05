@@ -1,0 +1,26 @@
+#coding=utf-8
+import solr
+#http://10.19.21.64:9030/s171.25/8983/solr/product_brand/select?q=*:*
+#http://10.19.21.64:9030/s171.25/8983/solr/product_brand/select?q=sl_type:b&fl=sl_content&wt=json&fq=sl_hasstock:true AND sl_pbrand_level:B AND sl_sell_to:[NOW TO *]
+#
+#http://192.168.44.68:8983/8983/solr//product_brand/select?q=sl_type:b&fl=sl_content&wt=json&fq=sl_hasstock:true AND  sl_sell_to:[NOW TO *]
+#http://192.168.44.68:8983/solr/product_brand/select?q=sl_type%3Ab&wt=json&indent=true
+#
+#
+
+solrserver68 = solr.SolrConnection('http://192.168.44.68:8983/solr/product_brand')
+
+def querysolr():
+    s = solr.SolrConnection('http://192.168.44.68:8983/solr')
+    result = s.query("*:*", rows=5)
+    for r in result:
+        print r['id']
+    return result
+
+
+
+def qBrand():
+    result =  solrserver68.query("sl_type:b",rows=6)
+    for r in result:
+        print r['id']
+    return result

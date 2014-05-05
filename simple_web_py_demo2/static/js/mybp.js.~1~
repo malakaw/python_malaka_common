@@ -1,0 +1,4 @@
+function myEval(str) {
+    var obj = eval('(' + str + ')');
+     alert(obj.toJSONString());
+}
